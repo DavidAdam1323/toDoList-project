@@ -32,3 +32,18 @@ body {
   grid-template-columns: 8fr 4fr;
   gap: 1em;
 }
+
+#wrapper input {
+  width: 100%;
+  background-color: transparent;
+  color: #d1d3d4;
+  font-size: 0.9em;
+  border: none;
+  border-bottom: 2px solid #d1d3d4;
+  padding: 1em 0.5em;
+}
+
+#wrapper input:focus {
+  outline: none;
+  border-color: #86b6f6;
+}
