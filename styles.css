@@ -1,4 +1,20 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background: linear-gradient(#77b0aa 50%, #135d66 50%);
+}
+
+.app {
+  font-family: "Poppins", sans-serif;
+  width: min(95vw, 31.25em);
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 1.875em;
 }
