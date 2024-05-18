@@ -11,14 +11,22 @@ body {
   background: linear-gradient(#77b0aa 50%, #135d66 50%);
 }
 
-img {
-  height: 25px;
-}
-
 .container {
   background-color: #eef0e5;
   width: 500px;
   border-radius: 10px;
   padding: 20px;
   margin: 100px auto 0;
+}
+
+img {
+  height: 25px;
+}
+
+.input-task {
+  border: none;
+  border-radius: 5px;
+  width: 300px;
+  height: 40px;
+  padding: 0 10px;
 }
