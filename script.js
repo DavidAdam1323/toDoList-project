@@ -24,7 +24,7 @@ function displayTask() {
   let newTask = ""; // Initialize an empty string to store the new task HTML elements; ✅
 
   // Iterate through each task in the listOfTasks array; ✅
-  listOfTasks.forEach((task) => {
+  listOfTasks.forEach((task, index) => {
     // Create HTML elements for each task and append them to the newTask string; ✅
     newTask =
       newTask +
@@ -32,13 +32,21 @@ function displayTask() {
   <li class="task">
     <img src="./images/checked.png" alt="check-icon" />
     <p>${task}</p>
-    <img src="./images/trash.png" alt="trash-icon" />
+    <img src="./images/trash.png" alt="trash-icon" onclick="removeItem(${index})"/>
   </li>
   `;
   });
 
   // Update the content of the fullList element with the newTask string; ✅
   fullList.innerHTML = newTask;
+}
+
+// Function to remove an item from the listOfTasks array based on the index; ✅
+function removeItem(index) {
+  listOfTasks.splice(index, 1); // Remove the item at the specified index from the listOfTasks array; ✅
+  console.log(index);
+
+  displayTask(); // Call the displayTask function to update the task list display; ✅
 }
 
 // Add an event listener to the button element that listens for a click event and calls the addingTask function when the button is clicked; ✅
