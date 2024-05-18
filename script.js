@@ -5,10 +5,12 @@
 const task = document.querySelector(".input-task");
 const button = document.querySelector(".addBtn");
 
-// Create a function called addingTask that: Outputs (logs) the value of the task input element to the console; ✅
+let listOfTasks = []; // Initialize an array to store the user's tasks; ✅
+
+// Function to add the value of the task input to the listOfTasks array; ✅
 function addingTask() {
-  console.log(task.value);
+  listOfTasks.push(task.value); // Add the value of the task input to the listOfTasks array; ✅
 }
 
-// Add an event listener to the button element that listens for a click event and calls the addingTask function when the button is clicked;
-button.addEventListener("click", addingTask); ✅
+// Add an event listener to the button element that listens for a click event and calls the addingTask function when the button is clicked; ✅
+button.addEventListener("click", addingTask);
