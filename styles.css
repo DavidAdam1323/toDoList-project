@@ -47,3 +47,15 @@ body {
   outline: none;
   border-color: #86b6f6;
 }
+
+#wrapper button {
+  position: relative;
+  border-radius: 0.5em;
+  font-weight: 900;
+  font-size: 1em;
+  background-color: #ffc55a;
+  border: none;
+  outline: none;
+  color: #135d66;
+  cursor: pointer;
+}
