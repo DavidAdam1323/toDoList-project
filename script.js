@@ -12,9 +12,13 @@ let listOfTasks = []; // Initialize an array to store the user's tasks; ✅
 
 // Function to add the value of the task input to the listOfTasks array; ✅
 function addingTask() {
-  listOfTasks.push(task.value); // Add the value of the task input to the listOfTasks array; ✅
+  listOfTasks.push({
+    task: task.value,
+    complete: false,
+  }); // Add the value of the task input to the listOfTasks array; ✅
   task.value = ""; // Clear the input field after adding the task; ✅
-  console.log(listOfTasks);
+
+  // console.log(listOfTasks);
 
   displayTask();
 }
@@ -29,9 +33,9 @@ function displayTask() {
     newTask =
       newTask +
       `
-  <li class="task">
-    <img src="./images/checked.png" alt="check-icon" />
-    <p>${task}</p>
+  <li class="task ${task.complete && "done"}">
+    <img src="./images/checked.png" alt="check-icon" onclick="completedTask(${index})"/>
+    <p>${task.task}</p>
     <img src="./images/trash.png" alt="trash-icon" onclick="removeItem(${index})"/>
   </li>
   `;
@@ -41,10 +45,20 @@ function displayTask() {
   fullList.innerHTML = newTask;
 }
 
+// Function to toggle the completion status of a task in the listOfTasks array at the specified index; ✅
+function completedTask(index) {
+  listOfTasks[index].complete = !listOfTasks[index].complete; // Toggle the completion status of the task at the given index; ✅
+
+  // console.log(index);
+
+  displayTask(); // Update the task list display; ✅
+}
+
 // Function to remove an item from the listOfTasks array based on the index; ✅
 function removeItem(index) {
   listOfTasks.splice(index, 1); // Remove the item at the specified index from the listOfTasks array; ✅
-  console.log(index);
+
+  // console.log(index);
 
   displayTask(); // Call the displayTask function to update the task list display; ✅
 }
