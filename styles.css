@@ -10,3 +10,7 @@ body {
   height: 100vh;
   background: linear-gradient(#77b0aa 50%, #135d66 50%);
 }
+
+img {
+  height: 25px;
+}
