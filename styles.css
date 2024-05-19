@@ -8,7 +8,8 @@
 
 body {
   height: 100vh;
-  background: linear-gradient(#77b0aa 50%, #135d66 50%);
+  background: linear-gradient(to bottom right, #5c8374, #1b4242, #092635);
+  /* background: linear-gradient(#77b0aa 50%, #135d66 50%); */
 }
 
 .container {
