@@ -11,16 +11,22 @@ const fullList = document.querySelector(".list-tasks");
 let listOfTasks = []; // Initialize an array to store the user's tasks; ✅
 
 // Function to add the value of the task input to the listOfTasks array; ✅
+// Check if the input field is not empty or only contains whitespace; ✅
 function addingTask() {
-  listOfTasks.push({
-    task: task.value,
-    complete: false,
-  }); // Add the value of the task input to the listOfTasks array; ✅
-  task.value = ""; // Clear the input field after adding the task; ✅
+  if (task.value.trim() !== "") {
+    listOfTasks.push({
+      task: task.value,
+      complete: false,
+    }); // Add the value of the task input to the listOfTasks array; ✅
+    task.value = ""; // Clear the input field after adding the task; ✅
 
-  // console.log(listOfTasks);
+    // console.log(listOfTasks);
 
-  displayTask();
+    displayTask();
+  } else {
+    // Alert the user or provide feedback that the input field cannot be empty; ✅
+    alert("Please Enter a valid Task before Adding.");
+  }
 }
 
 // Function to display tasks in the list; ✅
