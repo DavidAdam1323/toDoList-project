@@ -43,6 +43,9 @@ function displayTask() {
 
   // Update the content of the fullList element with the newTask string; ✅
   fullList.innerHTML = newTask;
+
+  // Store the listOfTasks array in local storage after converting it to a JSON string using JSON.stringify(); ✅
+  localStorage.setItem("list", JSON.stringify(listOfTasks));
 }
 
 // Function to toggle the completion status of a task in the listOfTasks array at the specified index; ✅
@@ -62,6 +65,20 @@ function removeItem(index) {
 
   displayTask(); // Call the displayTask function to update the task list display; ✅
 }
+
+// Function to upload tasks from local storage; ✅
+function uploadTasks() {
+  const localStorageTasks = localStorage.getItem("list"); // Retrieve tasks from local storage; ✅
+  if (localStorageTasks) {
+    listOfTasks = JSON.parse(localStorageTasks); // Parse and update the listOfTasks array with tasks from local storage; ✅
+  }
+
+  // console.log(uploadTasks);
+
+  displayTask(); // Call the displayTask function to update the task list display; ✅
+}
+
+uploadTasks();
 
 // Add an event listener to the button element that listens for a click event and calls the addingTask function when the button is clicked; ✅
 button.addEventListener("click", addingTask);
