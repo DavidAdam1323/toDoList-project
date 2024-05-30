@@ -198,4 +198,12 @@ h1:hover + .checkIcon {
     list-style: none;
     margin-top: 13px;
   }
+
+  .task .iconList {
+    display: none;
+  }
+
+  .task.show-icons .iconList {
+    display: inline-block;
+  }
 }

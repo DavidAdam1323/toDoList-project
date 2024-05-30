@@ -40,9 +40,9 @@ function displayTask() {
       newTask +
       `
   <li class="task ${task.complete && "done"}">
-    <img src="./images/checked.png" alt="check-icon" onclick="completedTask(${index})"/>
+    <img src="./images/checked.png" alt="check-icon" onclick="completedTask(${index})" class="iconList" />
     <p>${task.task}</p>
-    <img src="./images/trash.png" alt="trash-icon" onclick="removeItem(${index})"/>
+    <img src="./images/trash.png" alt="trash-icon" onclick="removeItem(${index})" class="iconList" />
   </li>
   `;
   });
@@ -95,5 +95,29 @@ task.addEventListener("keypress", function (event) {
   // Check if the key pressed is the "Enter" key; ✅
   if (event.key === "Enter") {
     addingTask(); // Call the addingTask function to add the task to the list; ✅
+  }
+});
+
+// Event listener to handle clicks on the document; ✅
+document.addEventListener("click", function (event) {
+  // Get the element that was clicked; ✅
+  const clickedElement = event.target;
+
+  // Find the closest ancestor element with the class "task"; ✅
+  const taskElement = clickedElement.closest(".task");
+
+  // Check if a task element was found; ✅
+  if (taskElement) {
+    // If a task element was found, add the "show-icons" class to display icons; ✅
+    taskElement.classList.add("show-icons");
+  } else {
+    // If no task element was found (clicked outside any task),
+    // Get all task elements on the page; ✅
+    const allTaskElements = document.querySelectorAll(".task");
+
+    // Iterate over all task elements and remove the "show-icons" class to hide icons; ✅
+    allTaskElements.forEach((task) => {
+      task.classList.remove("show-icons");
+    });
   }
 });
