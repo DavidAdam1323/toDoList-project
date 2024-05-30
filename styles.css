@@ -29,7 +29,7 @@ img {
 .input-task {
   border: none;
   border-radius: 5px;
-  width: 300px;
+  width: 360px;
   height: 41.3px;
   padding: 0 10px;
 }
@@ -145,4 +145,57 @@ h1:hover::after {
 
 h1:hover + .checkIcon {
   animation: bounce 1s;
+}
+
+@media (max-width: 600px) {
+  body {
+    height: 100vh;
+    padding: 20px;
+  }
+
+  .container {
+    width: 100%;
+    margin: 20px 0;
+    padding: 15px;
+  }
+
+  .input-task,
+  .addBtn {
+    width: 100%;
+    margin: 5px 0;
+    border-radius: 5px;
+  }
+
+  .input-task {
+    height: 40px;
+  }
+
+  .addBtn {
+    width: 100%;
+    float: none;
+  }
+
+  .title-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .checkIcon {
+    height: 45px;
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+
+  .task {
+    align-items: flex-start;
+    padding: 10px;
+    height: auto;
+  }
+
+  .list-tasks {
+    list-style: none;
+    margin-top: 13px;
+  }
 }
